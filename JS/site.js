@@ -12,7 +12,7 @@ async function getMovies() { //<-- 'async' gives the function time to wait for t
         let data = await response.json(); //<-- get the data back from the site, hopefully coming in a json format; the .json() makes the information an object, not just a string
 
         return data;
-    } catch (error) {
+    } catch (error) {    //<--secondary function as an alternative to the 'try' in case something goes wrong or is bugged from the code sent by fetching the data from the site
         console.error(error);
     }
 }
