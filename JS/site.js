@@ -109,6 +109,13 @@ async function showMovieDetails(clickedBtn) {
     let modalBtn = document.querySelector('.btn-primary'); //<--will hopefully send the user to the homepage when clicked from the modal
     modalBtn.href = movie.homepage;
 
+    movie.genres.forEach(genre => {  //<-- alt path given by Jacob. same as a for() loop, but condensed. pulling the genre list from the array of objects in the genre tab of the response and putting them as strings of text on the modal section
+        document.querySelector('#movieModal .genres').textContent += genre.name
+    })
+
+    let movieCast = document.querySelector('.actor-list'); //<--will pull the casting list from the response--- not working, may need new function
+    movieCast.textContent = movie.cast;
+
 
 }
 
@@ -141,13 +148,4 @@ async function showMovieDetails(clickedBtn) {
 </div>
 </div>---*/
 
-    //both are same, for use in selecting specific genre in the genres array
-    /*for (let i = 0; i < movie.genres.length; i++) {
-        let genre = genres[i];
-
-        document.querySelector('#movieModal .modal-body').textContent += genre.name;
-    }
-
-    movie.genres.forEach(genre => {
-        document.querySelector('#movieModal .modal-body').textContent += genre.name
-    })*/
+//both are same, for use in selecting specific genre in the genres array

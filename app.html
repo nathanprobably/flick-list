@@ -129,9 +129,9 @@
     <div class="modal fade" id="movieModal" tabindex="-1" aria-labelledby="movieModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered">
             <div class="modal-content">
-                <div class="col-12 text-end">
-                    <button type="button" class="btn-close m-3 bg-primary" data-dismiss="modal"
-                        aria-label="close"></button>
+                <div class="text-end">
+                    <button type="button" class="btn btn-close m-3 bg-dark-subtle" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
                 </div>
                 <div class="container row row-cols-1 row-cols-md-2">
                     <div class="col-12 col-lg-5">
@@ -140,11 +140,21 @@
                     <div class="col-12 col-lg-7">
                         <h1 class="movie-title"><!--title here--></h1>
                         <p class="overview"><!--Summary overview here--></p>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <h4>Starring</h4>
+                                <p class="actor-list"><!--Cast info here--></p>
+                            </li>
+                            <li class="list-group-item">
+                                <h4>Genres</h4>
+                                <p class="genres"><!--Genre info here--></p>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Exit</button>
-                        <a href="" type="button" class="btn btn-primary">Go To Site</a>
-                    </div>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Exit</button>
+                    <a href="" type="button" class="btn btn-primary">Go To Site</a>
                 </div>
             </div>
         </div>

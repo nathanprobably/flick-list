@@ -16,3 +16,7 @@
     color: var(--nl-primary-color);
 }
 
+.movie-image {
+    height: 75vh;
+    width: 100%;
+}
