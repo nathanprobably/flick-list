@@ -25,7 +25,7 @@
 
 </head>
 
-<body>
+<body onload="displayMovies()">
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="/index.html">
@@ -68,9 +68,7 @@
     </nav>
 
     <main class="container-xl py-3">
-        <h1 class="text-center mt-3 display-3">Popular Movies</h1>
-        <button class="btn btn-primary mb-5" onclick="displayMovies()">Get Movies</button>
-
+        <h1 class="text-center mt-3 display-3">Fan Faves</h1>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-3 justify-content-evenly"
             id="movie-list">
             <!--Movie Cards Go Here-->
@@ -125,7 +123,7 @@
     <!--#endregion main page div template-->
 
     <!--#region Modal-->
-    <!--Placeholder text in appropriate places so that I can style it later in JS-->
+    <!--Placeholder text in appropriate places so that I can style it later in JS and CSS-->
     <div class="modal fade" id="movieModal" tabindex="-1" aria-labelledby="movieModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered">
             <div class="modal-content">
@@ -141,7 +139,7 @@
                         <h1 class="movie-title"><!--title here--></h1>
                         <p class="overview"><!--Summary overview here--></p>
                         <ul class="list-group">
-                            
+
                             <li class="list-group-item">
                                 <h4>Genres</h4>
                                 <p class="genres"><!--Genre info here--></p>

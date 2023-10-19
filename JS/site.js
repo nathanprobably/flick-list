@@ -13,7 +13,12 @@ async function getMovies() { //<-- 'async' gives the function time to wait for t
 
         return data;
     } catch (error) {    //<--secondary function as an alternative to the 'try' in case something goes wrong or is bugged from the code sent by fetching the data from the site
-        console.error(error);
+        Swal.fire ({
+            backdrop: false,
+            title: 'Oops!',
+            text: 'We are having trouble reaching the TMDB API.',
+            icon: 'error'
+        });
     }
 }
 
@@ -87,7 +92,12 @@ async function getMovie(movieId) { //<-- 'async' gives the function time to wait
 
         return data;
     } catch (error) {    //<--secondary function as an alternative to the 'try' in case something goes wrong or is bugged from the code sent by fetching the data from the site
-        console.error(error);
+        Swal.fire ({
+            backdrop: false,
+            title: 'Oops!',
+            text: 'We are having trouble reaching the TMDB API.',
+            icon: 'error'
+        });
     }
 }
 
@@ -113,7 +123,7 @@ async function showMovieDetails(clickedBtn) {
         document.querySelector('#movieModal .genres').textContent += genre.name
     })
 
-    movie.production_companies.forEach(production_co => {  //<-- using same logic as the genre pull, pulling the name from the array of companies in the production company area of the response
+    movie.production_companies.forEach(production_co => {  //<-- using same logic as the genre pull, pulling the name from the array of companies in the production company area of the response, and turning the items from objects to strings
         document.querySelector('#movieModal .production-co').textContent += production_co.name
     })
 
