@@ -72,7 +72,7 @@
         <button class="btn btn-primary mb-5" onclick="displayMovies()">Get Movies</button>
 
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-3 justify-content-evenly"
-        id="movie-list">
+            id="movie-list">
             <!--Movie Cards Go Here-->
         </div>
 
@@ -100,6 +100,7 @@
         </div>
     </footer>
 
+    <!--#region main page div template-->
     <template id="movie-card-template">
         <div class="col">
             <div class="card h-100">
@@ -113,13 +114,42 @@
                     </p>
                 </div>
                 <div class="card-footer text-end">
-                    <button class="btn btn-primary">
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#movieModal"
+                        onclick="showMovieDetails(this)">
                         More Info
                     </button>
                 </div>
             </div>
         </div>
     </template>
+    <!--#endregion main page div template-->
+
+    <!--#region Modal-->
+    <!--Placeholder text in appropriate places so that I can style it later in JS-->
+    <div class="modal fade" id="movieModal" tabindex="-1" aria-labelledby="movieModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="col-12 text-end">
+                    <button type="button" class="btn-close m-3 bg-primary" data-dismiss="modal"
+                        aria-label="close"></button>
+                </div>
+                <div class="container row row-cols-1 row-cols-md-2">
+                    <div class="col-12 col-lg-5">
+                        <img src=" " class="movie-image" alt="Movie Poster" />
+                    </div>
+                    <div class="col-12 col-lg-7">
+                        <h1 class="movie-title"><!--title here--></h1>
+                        <p class="overview"><!--Summary overview here--></p>
+                    </div>
+                    <div class="">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Exit</button>
+                        <a href="" type="button" class="btn btn-primary">Go To Site</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--#endregion Modal-->
 
 
     <!--Bootsrap JS-->
@@ -132,15 +162,6 @@
 
     <!--MY JS-->
     <script src="/JS/site.js"></script>
-
-    <script>
-        //get the button on the page and assign it to a variable
-        let button = document.getElementById('btnSubmit');
-
-
-        //tell the button to run our displayMessage function when clicked
-        button.addEventListener('click', displayMessage);
-    </script>
 
 </body>
 

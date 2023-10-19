@@ -55,7 +55,7 @@ footer .bi:hover {
 }
 
 .app-logo {
-    max-width: 400px;
+    max-width: 2400px;
 }
 
 .btn-outline-primary {
@@ -67,4 +67,8 @@ footer .bi:hover {
     background-color: var(--nl-primary-color);
     color: var(--nl-secondary-color);
     border: 0;
+}
+
+.link-text {
+    color: var(--nl-secondary-color);
 }

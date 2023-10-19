@@ -8,8 +8,11 @@
 .btn-primary{
     background-color: var(--nl-primary-color);
     color: var(--nl-secondary-color);
+    border: 0;
 }
 
 .btn-primary:hover {
     background: var(--nl-secondary-color);
+    color: var(--nl-primary-color);
 }
+
