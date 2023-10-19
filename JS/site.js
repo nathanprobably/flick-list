@@ -96,7 +96,7 @@ async function showMovieDetails(clickedBtn) {
     document.querySelector('.genres').textContent = ""; //<-- makes the default text area empty, as to not carry over the genre from the other movies
     document.querySelector('.production-co').textContent = ""; //^^above note
 
-    let movieId = clickedBtn.getAttribute('data-movieId');
+    let movieId = clickedBtn.getAttribute('data-movieId'); 
 
     let movie = await getMovie(movieId); //<--calling in the ID from the getMovie() function
 
