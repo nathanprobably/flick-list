@@ -113,39 +113,45 @@ async function showMovieDetails(clickedBtn) {
         document.querySelector('#movieModal .genres').textContent += genre.name
     })
 
-    let movieCast = document.querySelector('.actor-list'); //<--will pull the casting list from the response--- not working, may need new function
-    movieCast.textContent = movie.cast;
-
+    movie.production_companies.forEach(production_co => {  //<-- using same logic as the genre pull, pulling the name from the array of companies in the production company area of the response
+        document.querySelector('#movieModal .production-co').textContent += production_co.name
+    })
 
 }
 
-//TODO: get more information to put into my modal. Another function for each?
-//--use the genre loop given by Jacob
-
-
 /* ---modal for reference---
 <div class="modal fade" id="movieModal" tabindex="-1" aria-labelledby="movieModalLabel" aria-hidden="true">
-<div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content">
-        <div class="col-12 text-end">
-            <button type="button" class="btn-close m-3 bg-primary" data-dismiss="modal"
-                aria-label="close"></button>
-        </div>
-        <div class="container row row-cols-1 row-cols-md-2">
-            <div class="col-12 col-lg-5">
-                <img src=" " class="movie-image" alt="Movie Poster" />
-            </div>
-            <div class="col-12 col-lg-7">
-                <h1 class="movie-title"><!--title here--></h1>
-                <p class="overview"><!--Summary overview here--></p>
-            </div>
-            <div class="">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Exit</button>
-                <a href="" type="button" class="btn btn-primary">Go To Site</a>
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="text-end">
+                    <button type="button" class="btn btn-close m-3 bg-dark-subtle" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="container row row-cols-1 row-cols-md-2">
+                    <div class="col-12 col-lg-5">
+                        <img src=" " class="movie-image" alt="Movie Poster" />
+                    </div>
+                    <div class="col-12 col-lg-7">
+                        <h1 class="movie-title"><!--title here--></h1>
+                        <p class="overview"><!--Summary overview here--></p>
+                        <ul class="list-group">
+                            
+                            <li class="list-group-item">
+                                <h4>Genres</h4>
+                                <p class="genres"><!--Genre info here--></p>
+                            </li>
+                            <li class="list-group-item">
+                                <h4>Made By</h4>
+                                <p class="production-co"><!--company info here--></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Exit</button>
+                    <a href="" type="button" class="btn btn-primary">Go To Site</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
-</div>---*/
-
-//both are same, for use in selecting specific genre in the genres array
+---*/
