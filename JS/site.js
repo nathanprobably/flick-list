@@ -93,6 +93,9 @@ async function getMovie(movieId) { //<-- 'async' gives the function time to wait
 
 //get the ID of the movie that was clicked, get the details of that movie using the ID from TMDB API, and then put those details into the modal
 async function showMovieDetails(clickedBtn) {
+    document.querySelector('.genres').textContent = ""; //<-- makes the default text area empty, as to not carry over the genre from the other movies
+    document.querySelector('.production-co').textContent = ""; //^^above note
+
     let movieId = clickedBtn.getAttribute('data-movieId');
 
     let movie = await getMovie(movieId); //<--calling in the ID from the getMovie() function
@@ -106,9 +109,6 @@ async function showMovieDetails(clickedBtn) {
     let movieOverview = document.querySelector('.overview'); //<-- will grab the overview summary from the response to put it in the modal
     movieOverview.textContent = movie.overview;
 
-    let modalBtn = document.querySelector('.btn-primary'); //<--will hopefully send the user to the homepage when clicked from the modal
-    modalBtn.href = movie.homepage;
-
     movie.genres.forEach(genre => {  //<-- alt path given by Jacob. same as a for() loop, but condensed. pulling the genre list from the array of objects in the genre tab of the response and putting them as strings of text on the modal section
         document.querySelector('#movieModal .genres').textContent += genre.name
     })
@@ -116,6 +116,9 @@ async function showMovieDetails(clickedBtn) {
     movie.production_companies.forEach(production_co => {  //<-- using same logic as the genre pull, pulling the name from the array of companies in the production company area of the response
         document.querySelector('#movieModal .production-co').textContent += production_co.name
     })
+
+    let modalBtn = document.querySelector('.site-button'); //<--will send the user to the homepage when clicked from the modal
+    modalBtn.href = movie.homepage;  //<--uses href instead of a textContent because you don't want the text in homepage, you want to follow the link path
 
 }
 
